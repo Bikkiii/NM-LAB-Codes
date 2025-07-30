@@ -12,7 +12,7 @@ def Secant(F, a, b):
   if abs(F(b))< tol:
     return round(b,5)
 
-  for _ in range(maxitr):
+  for i in range(maxitr):
     if abs(F(b)-F(a))<tol:
       print("Error! dividion by zero")
       return None
@@ -23,7 +23,7 @@ def Secant(F, a, b):
       return round(c,5)
 
     a,b = b,c
-
+    return None
 def PlotFx(F, x0, xn, xp=None, n=201, ylimit=None):
   X = np.linspace(x0, xn, n)
   Y = F(X)

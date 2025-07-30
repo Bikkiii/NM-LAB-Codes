@@ -1,6 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+def F(x):
+  return x * np.sin(x) + np.cos(x)
+
+def G(x):
+  return np.cos(x) * x
+
 def NR(F, G, x0):
   tol = 0.00005
 
@@ -20,21 +27,16 @@ def NR(F, G, x0):
     x0 = x1
   return None
 
-def F(x):
-  return x * np.sin(x) + np.cos(x)
-
-def G(x):
-  return np.cos(x) * x + np.sin(x) - np.sin(x)
-
-root = NR(F,G,1)
+root = NR(F,G,2.5)
 print("The root = ", root)
 
 plt.figure(figsize=(9,2.5))
-X = np.linspace(1,root,210)
+X = np.linspace(-8,8,500)
 Y = F(X)
 plt.grid()
 plt.plot(X,Y)
-plt.title("Newton Raphson Method    Sumoon[45]")
+plt.title("Newton Raphson Method")
+plt.axhline(0,linestyle='--',color='red',linewidth=1)
 plt.xlabel("x")
 plt.ylabel("y")
 plt.scatter(root,0,color="red")

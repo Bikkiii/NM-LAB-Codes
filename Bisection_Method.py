@@ -1,6 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+def F(x):
+  return x**3 - x - 3
+
 def Bisection(F, a, b):
   tol = 0.00005
   maxitr = 100
@@ -15,7 +18,7 @@ def Bisection(F, a, b):
     c = (a + b)/2
 
     if abs(F(c)) < tol:
-      return round(c,5);
+      return round(c,5)
 
     if F(c) < 0:
       a = c
@@ -25,8 +28,6 @@ def Bisection(F, a, b):
 
   return None
 
-def F(x):
-  return x**3 - x - 3
 
 a = 1
 b = 2
