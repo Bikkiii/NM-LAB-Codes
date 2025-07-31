@@ -35,7 +35,7 @@ root = Bisection(F, a, b)
 print("The root is ", root)
 
 plt.figure(figsize=(5,5))
-X = np.linspace(a,b,200)
+X = np.linspace(-10,10,200)
 Y = F(X)
 plt.grid()
 plt.plot(X,Y)
